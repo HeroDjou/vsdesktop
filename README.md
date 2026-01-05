@@ -1,5 +1,7 @@
 # VSDesktop
 
+> **Projeto em desenvolvimento** - Esta aplicação está em constante evolução e não é um produto final. Oferecida "como está", sem suporte oficial. Contribuições via pull request são bem-vindas!
+
 Aplicação desktop Electron para gerenciamento do HeroDev Container. Fornece interface gráfica para controle de serviços, monitoramento de status em tempo real e acesso rápido aos recursos do ambiente de desenvolvimento.
 
 ## Índice
@@ -83,9 +85,25 @@ npm install
 npm run package:win
 ```
 
+Ou para macOS:
+```bash
+# macOS Apple Silicon (M1/M2/M3)
+npm run package:mac_arm64
+
+# macOS Intel
+npm run package:mac_x64
+```
+
 5. O executável será gerado em:
 ```
+# Windows
 out/vsdesktop-win32-x64/vsdesktop.exe
+
+# macOS ARM64
+out/vsdesktop-darwin-arm64/vsdesktop.app
+
+# macOS x64
+out/vsdesktop-darwin-x64/vsdesktop.app
 ```
 
 ---
@@ -627,6 +645,27 @@ npm run make
 
 ---
 
+## Licença
+
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
+
+**Oferecido "COMO ESTÁ"** sem garantias de qualquer tipo, expressas ou implícitas.
+
+---
+
+## Contribuindo
+
+Contribuições são bem-vindas! Este projeto está em desenvolvimento ativo e não há suporte oficial, mas você pode:
+
+- Reportar bugs abrindo uma issue
+- Sugerir melhorias
+- Fazer pull requests com correções ou novas funcionalidades
+- Melhorar a documentação
+
+Veja [CONTRIBUTING.md](CONTRIBUTING.md) para mais detalhes.
+
+---
+
 ## Uso
 
 ### Execução
@@ -638,12 +677,6 @@ volumes\workspace\vsdesktop\out\vsdesktop-win32-x64\vsdesktop.exe
 
 Via start-herodev.bat:
 - Selecione "S" quando perguntado sobre GUI
-
-### Atalhos de teclado
-
-| Atalho | Ação |
-|--------|------|
-| Ctrl+Shift+I | Abrir/fechar DevTools |
 
 ### Fluxo de uso
 

@@ -6,12 +6,18 @@
     "start": "electron-forge start",
     "package": "electron-forge package",
     "package:win": "electron-forge package --platform=win32 --arch=x64",
+    "package:mac_arm64": "electron-forge package --platform=darwin --arch=arm64",
+    "package:mac_x64": "electron-forge package --platform=darwin --arch=x64",
     "make": "electron-forge make"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "keywords": ["electron", "podman", "container", "management", "herodev", "desktop"],
+  "author": "HeroDjou",
+  "license": "MIT",
+  "description": "Aplicação desktop Electron para gerenciamento do HeroDev Container",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/herodjou/vsdesktop.git"
+  },
   "devDependencies": {
     "@electron-forge/cli": "^7.10.2",
     "@electron-forge/maker-deb": "^7.10.2",
@@ -31,7 +37,9 @@
   "config": {
     "forge": {
       "packagerConfig": {
-        "appCopyright": "Copyright © 2025 HeroDjou",
+        "appCopyright": "Copyright © 2026 HeroDjou",
+        "appBundleId": "com.herodjou.vsdesktop",
+        "appCategoryType": "public.app-category.developer-tools",
         "win32metadata": {
           "CompanyName": "HeroDjou",
           "ProductName": "VS Desktop",
