@@ -304,6 +304,7 @@ function renderTabs(tabs) {
 
 // ============ CONFIGURAÇÕES ============
 let appConfig = null;
+let settingsModalInstance = null;
 
 async function loadConfig() {
     if (typeof window.api !== 'undefined' && window.api.getConfig) {
@@ -338,6 +339,12 @@ function applyTheme(theme) {
 }
 
 async function openSettings() {
+    // Se o modal já está aberto, fecha ele (toggle)
+    if (settingsModalInstance) {
+        settingsModalInstance.hide();
+        return;
+    }
+    
     if (!appConfig) {
         await loadConfig();
     }
@@ -400,8 +407,14 @@ async function openSettings() {
         renderServicesConfig();
     }
     
-    const bsModal = new bootstrap.Modal(modal);
-    bsModal.show();
+    settingsModalInstance = new bootstrap.Modal(modal);
+    
+    // Limpar a referência quando o modal for fechado
+    modal.addEventListener('hidden.bs.modal', () => {
+        settingsModalInstance = null;
+    }, { once: true });
+    
+    settingsModalInstance.show();
 }
 
 function renderServicesConfig() {
